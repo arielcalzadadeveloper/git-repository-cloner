@@ -1,0 +1,2 @@
+class GitRepositoryClonerException(Exception):
+    pass

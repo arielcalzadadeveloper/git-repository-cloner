@@ -1,17 +1,3 @@
-# GIT Repository Cloner
-
-This script reads a json file with a set of credentials and clone or pull all the associated repositories: 
-
-The credentials are:
-* user: git user
-* token: git token
-* type: GITHUB or BITBUCKET
-* path: root folder to put the files
-* enabled: enables/disables an entry
-
-## Example
-
-```json
 [
     {
         "user": "example",
@@ -26,6 +12,5 @@ The credentials are:
         "path": "/home/example/repositories/bitbucket",
         "type": "BITBUCKET",
         "enabled": false
-    },
+    }
 ]
-```

@@ -1,0 +1,2 @@
+pybitbucket
+PyGithub
