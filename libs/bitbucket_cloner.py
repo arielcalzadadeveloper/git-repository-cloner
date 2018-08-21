@@ -1,4 +1,5 @@
 import logging
+import os
 
 import requests
 
@@ -20,7 +21,12 @@ class BitbucketCloner(BaseCloner):
             repo_name = repository.get("slug")
             repo_url = repository.get("links").get("clone")[0].get("href")
             repo_url = repo_url.replace("@", ":{token}@".format(token=self._token))
-            repo_path = self._path.joinpath(self._path, project_name, repo_name)
+            repo_path = self._path.joinpath(project_name)
+
+            if not repo_path.exists():
+                os.makedirs("{}".format(repo_path.absolute()))
+
+            repo_path = repo_path.joinpath(repo_name)
 
             if not repo_path.exists():
                 logger.debug("Cloning {}".format(repo_name))

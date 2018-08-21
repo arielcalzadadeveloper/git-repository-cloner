@@ -35,13 +35,14 @@ class BaseCloner:
         command = [
             "git",
             "pull",
-            url,
-            repo_path
+            url
         ]
         self._run_command(command)
 
     @staticmethod
     def _run_command(command):
+        logger.debug("Running command: {}".format(command))
+
         try:
             command_line_process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             process_output, _ = command_line_process.communicate()
