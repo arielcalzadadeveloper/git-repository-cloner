@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import pathlib
 import time
 
@@ -9,7 +10,7 @@ from libs.github_cloner import GithubCloner
 
 
 def main():
-    base_dir = pathlib.Path()
+    base_dir = pathlib.Path(os.path.dirname(os.path.abspath(__file__)))
 
     # Setup logging
     log_path = "{}".format(base_dir.joinpath("logs", "git_repository_cloner.log").absolute())
