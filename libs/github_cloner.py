@@ -10,12 +10,15 @@ logger = logging.getLogger(__name__)
 class GithubCloner(BaseCloner):
     def start(self):
         handler = Github(login_or_token=self._token)
+        base_url = self._base_url or "github.com"
 
         for repo in handler.get_user().get_repos():
             repo_name = repo.name
-            url = "https://{user}:{token}@github.com/{user}/{repo_name}.git".format(user=self._user,
+
+            url = "https://{user}:{token}@{base_url}/{user}/{repo_name}.git".format(user=self._user,
                                                                                     token=self._token,
-                                                                                    repo_name=repo_name)
+                                                                                    repo_name=repo_name,
+                                                                                    base_url=base_url)
             repo_path = self._path.joinpath(repo_name)
 
             if not repo_path.exists():

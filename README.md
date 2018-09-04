@@ -5,7 +5,7 @@ This script reads a json file with a set of credentials and clone or pull all th
 The credentials are:
 * user: git user
 * token: git token
-* type: GITHUB or BITBUCKET
+* type: GITHUB, BITBUCKET
 * path: root folder to put the files
 * enabled: enables/disables an entry
 
@@ -18,6 +18,7 @@ The credentials are:
         "token": "TOKEN",
         "path": "/home/example/repositories/github",
         "type": "GITHUB",
+        "url": "github.com",
         "enabled": true
     },
     {
@@ -26,6 +27,6 @@ The credentials are:
         "path": "/home/example/repositories/bitbucket",
         "type": "BITBUCKET",
         "enabled": false
-    },
+    }
 ]
 ```

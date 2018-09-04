@@ -5,6 +5,7 @@
         "email": "email@email.com",
         "path": "/home/example/repositories/github",
         "type": "GITHUB",
+        "url": "github.com",
         "enabled": true
     },
     {
