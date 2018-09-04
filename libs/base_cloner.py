@@ -9,11 +9,10 @@ logger = logging.getLogger(__name__)
 
 
 class BaseCloner:
-    def __init__(self, user, token, path, base_url=None):
+    def __init__(self, user, token, path):
         self._user = user
         self._token = token
         self._path = pathlib.Path(path)
-        self._base_url = base_url
 
         # Create path if not exists
         if not self._path.exists():

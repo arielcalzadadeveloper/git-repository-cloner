@@ -36,7 +36,6 @@ def main():
         path = credentials.get("path")
         repo_type = credentials.get("type")
         enabled = credentials.get("enabled")
-        url = credentials.get("url", None)
 
         if not enabled:
             logger.debug("Repos for user {} is disabled, process skipped".format(user))
@@ -53,7 +52,7 @@ def main():
             logger.exception(message)
             raise GitRepositoryClonerException(message)
 
-        cloner = cloner_class(user, token, path, url)
+        cloner = cloner_class(user, token, path)
         start_time = time.time()
         cloner.start()
         end_time = time.time()

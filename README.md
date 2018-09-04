@@ -18,7 +18,6 @@ The credentials are:
         "token": "TOKEN",
         "path": "/home/example/repositories/github",
         "type": "GITHUB",
-        "url": "github.com",
         "enabled": true
     },
     {
